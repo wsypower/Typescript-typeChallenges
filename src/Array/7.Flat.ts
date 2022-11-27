@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: wsy
  * @Date: 2022-11-27 21:10:42
- * @LastEditTime: 2022-11-27 21:21:59
+ * @LastEditTime: 2022-11-27 21:59:37
  * @LastEditors: wsy
  */
 
@@ -19,7 +19,5 @@ type D = Flat<[1]>; // [1]
  * @returns {any[]} - the flattened array           
  */
 export type Flat<T extends any[]> = T extends [infer L, ...infer R]
-  ? L extends any[]
-  ? [...Flat<L>, ...Flat<R>]
-  : [L, ...Flat<R>]
-  : T
+  ? [...(L extends any[] ? Flat<L> : [L]), ...Flat<R>]
+  : [];
