@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: wsy
  * @Date: 2022-11-27 20:13:56
- * @LastEditTime: 2022-11-27 20:16:40
+ * @LastEditTime: 2022-11-27 20:18:05
  * @LastEditors: wsy
  */
 
@@ -17,6 +17,6 @@ type D = LastItem<[1]>; // 1
  * @param {T} tuple - the tuple to get the last item from       
  * @returns the last item in the tuple       
  */
-export type LastItem<T> = T extends [...any[], infer R] ? R : never
+export type LastItem<T extends any[]> = T extends [...any[], infer R] ? R : never
 
 
