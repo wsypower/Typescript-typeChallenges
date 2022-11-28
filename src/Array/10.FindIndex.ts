@@ -1,3 +1,10 @@
+/*
+ * @Description: 
+ * @Author: wsy
+ * @Date: 2022-11-28 20:44:01
+ * @LastEditTime: 2022-11-28 20:46:30
+ * @LastEditors: wsy
+ */
 // 1） 找到两个值相等的一项，如何判断两个值是否相等？
 // 2) 最终要返回的是索引， 内部构建一个数组，来记录当前遍历到了第几项
 type a1 = [any, never, 1, "2", true];
