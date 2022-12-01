@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: wsy
  * @Date: 2022-11-29 21:49:40
- * @LastEditTime: 2022-11-29 21:50:45
+ * @LastEditTime: 2022-12-01 20:01:09
  * @LastEditors: wsy
  */
 
@@ -17,3 +17,7 @@ type a3 = CapitalizeString<233>; // 233
  * @returns {CapitalizeString<T>} - the capitalized string       
  */
 export type CapitalizeString<T> = T extends string ? Capitalize<T> : T;
+
+
+
+
