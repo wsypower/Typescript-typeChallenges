@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: wsy
  * @Date: 2022-12-19 18:29:21
- * @LastEditTime: 2022-12-19 20:05:21
+ * @LastEditTime: 2022-12-19 20:18:37
  * @LastEditors: wsy
  */
 
@@ -71,6 +71,29 @@ type GetParametersS = GetParameters<(a: number, b: string) => void> //[number, s
 
 type GetReturnType<T extends (...arg: any[]) => any> = T extends (...arg: any[]) => infer R ? R : never
 type GetReturnTypeS = GetReturnType<(a: number, b: string) => void> //void
+
+type GetConstructorParameters<T extends new (...arg: any[]) => any> = T extends new (...arg: infer P) => any ? P : never
+type GetConstructorParametersS = GetConstructorParameters<new (a: number, b: string) => void> //[number, string]
+
+type GetConstructorReturnType<T extends new (...arg: any[]) => any> = T extends new (...arg: any[]) => infer R ? R : never
+type GetConstructorReturnTypeS = GetConstructorReturnType<new (a: number, b: string) => { name: string }> //void
+
+type GetThisParameterType<T extends (...arg: any[]) => any> = T extends (this: infer P, ...arg: any[]) => any ? P : never;
+type GetThisParameterTypeS = GetThisParameterType<(this: { name: string }, a: number, b: string) => void>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 export { }
