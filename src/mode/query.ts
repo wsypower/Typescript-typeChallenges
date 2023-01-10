@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: wsy
  * @Date: 2023-01-09 19:25:15
- * @LastEditTime: 2023-01-09 19:29:08
+ * @LastEditTime: 2023-01-09 19:53:12
  * @LastEditors: wsy
  */
 type ParseParam<Param extends string> =
@@ -63,3 +63,11 @@ function parseQueryString(queryStr: string) {
 
 const res = parseQueryString('a=1&b=2&c=3');
 const res1 = parseQueryString('');
+
+
+
+function is<T extends Array<unknown>>(arr: T): T {
+  return arr
+}
+
+const arr = is(["1", "2", "3", 1])
